@@ -33,9 +33,9 @@ opcode encode which register is being used:
   [3:0] — register select (R0=000, R1=001, ... R7=111)
 
 Example:
-  add R0 = 0001 0000 = 0x10
-  add R3 = 0001 0011 = 0x13
-  sub R5 = 0010 0101 = 0x25
+  add R0 = 0001 0000 = 0x10;
+  add R3 = 0001 0011 = 0x13;
+  sub R5 = 0010 0101 = 0x25;
 
 ## Instruction Set
 
@@ -96,21 +96,22 @@ to the programmer but needed for Verilog implementation.
 
 Goal: compute 5 + 3, store result in R2
 
-Assembly:
-  movi R0, 5     ; R0 = 5
-  movi R1, 3     ; R1 = 3
-  movs R0        ; AR = R0 = 5
-  add  R1        ; AR = AR + R1 = 8
-  movd R2        ; R2 = AR = 8
-  stop
+  | Assembly | Function |
+  |----------|--------- |
+  | movi R0, 5 | R0 = 5 |
+  | movi R1, 3 | R1 = 3 |
+  | movs R0 | AR = R0 = 5 |
+  | add  R1 | AR = AR + R1 = 8 |
+  | movd R2 | R2 = AR = 8 |
+  | stop | halt |
 
-Machine code (hex):
-  Address  Hex    Meaning
-  0x00     0x90   movi R0 (opcode)
-  0x01     0x05   immediate value 5
-  0x02     0x91   movi R1 (opcode)
-  0x03     0x03   immediate value 3
-  0x04     0x70   movs R0
-  0x05     0x11   add R1
-  0x06     0x82   movd R2
-  0x07     0x07   stop
+| Address | Hex  | Meaning           |
+| ------- | ---- | ----------------- |
+| 0x00    | 0x90 | movi R0 opcode    |
+| 0x01    | 0x05 | Immediate value 5 |
+| 0x02    | 0x91 | movi R1 opcode    |
+| 0x03    | 0x03 | Immediate value 3 |
+| 0x04    | 0x70 | movs R0           |
+| 0x05    | 0x11 | add R1            |
+| 0x06    | 0x82 | movd R2           |
+| 0x07    | 0x07 | stop              |
