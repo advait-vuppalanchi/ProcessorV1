@@ -18,3 +18,17 @@ pc:
 
 wave_pc:
 	gtkwave sim/pc.vcd
+
+ar:
+	iverilog -o sim/ar_sim rtl/func_regs.v tb/ar_tb.v
+	vvp sim/ar_sim
+
+wave_ar:
+	gtkwave sim/ar_reg.vcd
+
+or:
+	iverilog -o sim/or_sim rtl/func_regs.v tb/or_tb.v
+	vvp sim/or_sim
+
+wave_or:
+	gtkwave sim/or_reg.vcd
