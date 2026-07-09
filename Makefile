@@ -43,14 +43,25 @@ wave_control:
 proc:
 	iverilog -g2012 -Irtl -o sim/proc_sim rtl/*.v tb/proc_tb.v
 
-test1: proc
-	vvp sim/proc_sim +hexfile=programs/test1.hex
+test1:
+	python assembler.py programs/test1.asm
+	vvp sim/proc_sim +hexfile=programs/test1.hex +test1
 
 test2:
-	vvp sim/proc_sim +hexfile=programs/test2.hex
+	python assembler.py programs/test2.asm
+	vvp sim/proc_sim +hexfile=programs/test2.hex +test2
 
 test3:
+	python assembler.py programs/test3.asm
 	vvp sim/proc_sim +hexfile=programs/test3.hex +test3
+
+test4:
+	python assembler.py programs/test4.asm
+	vvp sim/proc_sim +hexfile=programs/test4.hex +test4
+
+test5:
+	python assembler.py programs/test5.asm
+	vvp sim/proc_sim +hexfile=programs/test5.hex +test5
 
 wave:
 	gtkwave sim/processor.vcd
