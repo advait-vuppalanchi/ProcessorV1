@@ -24,9 +24,6 @@
 | | | 4 | RD, LOR | - |
 | | | 5 | EAR, End | SALU ← CMP |
 | **stop** | 07 | 3 | End, StopClock | - |
-| **ret\<FL\>** | 08–0F | 3 | EFL, End if \<FL\>’ | SFL ← \<FL\> |
-| | | 4 | ESP, LMR, ISP | - |
-| | | 5 | RD, LPC, End | - |
 | **add \<R\>** | 10–1F | 3 | ERG, LOR | SRG ← \<R\> |
 | | | 4 | EAR, LAR, End | SALU ← ADD |
 | **sub \<R\>** | 20–2F | 3 | ERG, LOR | SRG ← \<R\> |
@@ -47,22 +44,3 @@
 | | | 4 | ERG, WR, End | SRG ← \<R\> |
 | **load \<R\>** | B0–BF | 3 | EAR, LMR | - |
 | | | 4 | RD, LRG, End | SRG ← \<R\> |
-| **push \<R\>** | C0–CF | 3 | DSP | - |
-| | | 4 | ESP, LMR | - |
-| | | 5 | ERG, WR, End | SRG ← \<R\> |
-| **pop \<R\>** | D0–DF | 3 | ESP, LMR, ISP | - |
-| | | 4 | RD, LRG, End | SRG ← \<R\> |
-| **jumpd\<FL\> xx** | E0–E7 | 3 | EPC, LMR, IPC, EFL, End if \<FL\>’ | SFL ← \<FL\> |
-| | | 4 | RD, LPC, End | - |
-| **jmpr\<FL\>** | E8–EF | 3 | EFL, End if \<FL\>’ | SFL ← \<FL\> |
-| | | 4 | EAR, LPC, End | - |
-| **cd\<FL\> xx** | F0–F7 | 3 | EPC, LMR, IPC, EFL, End if \<FL\>’ | SFL ← \<FL\> |
-| | | 4 | RD, LOR, DSP | - |
-| | | 5 | ESP, LMR | - |
-| | | 6 | EPC, WR | - |
-| | | 7 | EOR, LPC, End | - |
-| **cr\<FL\>** | F8–FF | 3 | EFL, End if \<FL\>’ | SFL ← \<FL\> |
-| | | 4 | DSP | - |
-| | | 5 | ESP, LMR | - |
-| | | 6 | EPC, WR | - |
-| | | 7 | EAR, LPC, End | - |

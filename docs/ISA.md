@@ -1,7 +1,3 @@
-# DSM Processor — ISA Specification
-
-A simple 8-bit accumulator-based processor implemented in Verilog,
-based on "Design of a Simple Processor" by Prof P.J. Narayanan, IIIT Hyderabad.
 
 ## Overview
 - Word width: 8 bits
